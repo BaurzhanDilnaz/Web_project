@@ -1,0 +1,118 @@
+
+<style>
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    /* background-color: #1976d2; */
+    background: radial-gradient(#e68989, #757cc8);
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  .toolbar #youtube-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover,
+  .toolbar #youtube-logo:hover {
+    opacity: 0.8;
+  }
+
+  .nav-bar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-option {
+  float: right;
+}
+
+.nav-option a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav-option a:hover {
+  background-color: #217bd5;
+}
+.SS{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  position: relative;
+  left: 40px;
+}
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <span class="SS">Self-study</span>
+    <div class="spacer"></div>
+    <ul class="nav-bar">
+      <li class="nav-option">
+        <a class="nav-option">
+          Sign in
+        </a>
+      </li>
+      <li class="nav-option">
+        <a class="nav-option">
+          My Cources
+        </a>
+      </li>
+      <li class="nav-option">
+        <a class="nav-option">
+          About
+        </a>
+      </li>
+      <li class="nav-option">
+        <a class="nav-option">
+          Home
+        </a>
+      </li>
+    </ul>
+</div>
+
+
+
+<router-outlet></router-outlet>
