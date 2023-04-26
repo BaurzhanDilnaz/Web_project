@@ -1,8 +1,8 @@
 # Self-study platform 
 
 Group members: 
-Onalbekov Bakbergin
-Bayandina Nazerke
+Onalbekov Bakbergin <br>
+Bayandina Nazerke <br>
 Baurzhan Dilnaz 
 
 
