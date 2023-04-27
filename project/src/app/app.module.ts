@@ -9,6 +9,7 @@ import { StudyTipsComponent } from './study-tips/study-tips.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     AboutComponent,
     StudyTipsComponent,
     SignInComponent,
-    HomeComponent
+    HomeComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { HomeComponent } from './home/home.component';
       {path: '', component: HomeComponent},
       {path: 'about', component: AboutComponent},
       {path: 'sign-in', component: SignInComponent},
+      {path: 'sign-up', component: SignUpComponent},
       {path: 'study-tips', component: StudyTipsComponent}
     ])
   ],

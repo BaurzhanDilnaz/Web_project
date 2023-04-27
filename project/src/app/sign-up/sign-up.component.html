@@ -1,14 +1,16 @@
 <div class="form-box">
     <form class="form">
         <span class="title">Self-Study</span>
-        <span class="subtitle">Login your account with your email</span>
+        <span class="subtitle">Create a free account with your email.</span>
         <div class="form-container">
+            <input type="text" class="input" placeholder="First Name">
+            <input type="text" class="input" placeholder="last Name">
             <input type="email" class="input" placeholder="Email">
             <input type="password" class="input" placeholder="Password">
         </div>
-        <button>Login</button>
+        <button>Sign up</button>
     </form>
     <div class="form-section">
-        <p>Don't you have an account yet? <a href="" [routerLink]="['/sign-up']">Register</a> </p>
+        <p>Have an account? <a href="" [routerLink]="['/sign-in']">Log in</a> </p>
     </div>
 </div>
