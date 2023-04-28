@@ -1,10 +1,47 @@
-import { Component } from '@angular/core';
+import { isNgTemplate } from '@angular/compiler';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from "@angular/router";
+import { StudentService } from '../student.service';
+import { Student } from '../student';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+  secret_word: string;
+  student: Student
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private service: StudentService
+  ) {
+    this.student = {} as Student
+    this.secret_word = "";
+    this.first_name = "";
+    this.email = "";
+    this.last_name = "";
+    this.password = "";
+  }
+
+  ngOnInit(): void {
+  }
+
+  createUser() {
+    this.service.createUser(this.first_name, this.last_name, this.email, this.password, this.secret_word).subscribe((user)=>{
+      this.secret_word = "";
+      this.first_name = "";
+      this.email = "";
+      this.last_name = "";
+      this.password = "";
+      this.router.navigate(['/profile'])
+    })
+  }
 
 }

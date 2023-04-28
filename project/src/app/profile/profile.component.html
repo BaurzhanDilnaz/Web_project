@@ -1,0 +1,52 @@
+<div class="toolbar" role="banner">
+    <img src="https://i.ibb.co/CBjJZ5B/logo.png" alt="Logo" width="50px" height="45px" style="float: right;" id="logo">
+    <span class="SS">Self-study</span>
+
+    <div class="spacer"></div>
+    <ul class="nav-bar">
+
+        <li class="nav-option">
+            <a class="nav-option" [routerLink]="['/study-tips']">
+                Study Tips
+            </a>
+        </li>
+        <li class="nav-option">
+            <a class="nav-option" [routerLink]="['/about']">
+                About
+            </a>
+        </li>
+        <li class="nav-option">
+            <a class="nav-option" [routerLink]="['/']">
+                Home
+            </a>
+        </li>
+    </ul>
+    <span>
+        <fieldset class="nav-option-after">
+            <a class="nav-option-after-a" [routerLink]="['/']">
+                Log Out
+            </a>
+        </fieldset>
+    </span>
+</div>
+<div class="main">
+    <p class="paragraph1">
+        <img src="https://cdn-icons-png.flaticon.com/512/4989/4989881.png" alt="Сheck mark icon" width="30" height="30">
+        Manage your classes, tasks and exams
+    </p>
+
+
+    <h1>
+        Never Forget a Class or Assignment <br>Again - Digital School Organizer
+    </h1>
+    <button [routerLink]="['/sign-in']">
+        Get Started
+    </button>
+
+</div>
+<div class="buttons">
+    <li class="lan"><a href='#logo_1' [routerLink] = "['/to-do']"><img src="https://cdn-icons-png.flaticon.com/512/5194/5194962.png" width="50"class="logo1" >To-Do</a></li>
+    <li class="lan"><a href='#logo_2' [routerLink] = "['/tasks']"><img src="https://cdn-icons-png.flaticon.com/512/1441/1441035.png" width="50"class="logo1" >Tasks</a></li>
+    <li class="lan"><a href='#logo_3' [routerLink] = "['/calendar']"><img src="https://cdn-icons-png.flaticon.com/512/2343/2343668.png" width="50"class="logo1" >Calendar</a></li>
+</div>
+
