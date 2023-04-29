@@ -6,32 +6,38 @@ export interface Task{
     title : string,
     subject : string,
     description : string,
-    isActive : boolean
+    isActive : boolean,
+    active : number
 }
 
 export const tasks = [
     {
         title : "aadasd",
         subject : "pp1",
-        description : "asdasd",
-        isActive : false
+        description : "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+        isActive : false,
+        active : 0
     },
     {
         title : "aada21sd",
         subject : "pp1",
         description : "asdasd",
-        isActive : false
+        isActive : false,
+        active : 0
     },
     {
         title : "aada21asdsd",
         subject : "pp1",
         description : "asdasd",
-        isActive : false
+        isActive : false,
+        active : 0
+
     },
     {
         title : "aada21asdsd",
         subject : "pp1",
         description : "asdasd",
-        isActive : false
+        isActive : false,
+        active : 0
     }
 ]

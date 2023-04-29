@@ -1,6 +1,6 @@
 <header>
     <div style="max-width: max-content; height: 70px; ">
-        <a class="backToHome" [routerLink]=>
+        <a class="backToHome" [routerLink]="['/']" >
             <button class="button-back">
                 Home
             </button>
@@ -83,7 +83,7 @@
                                 <div>
                                     <p class="input-type">Description</p>
                                     <div>
-                                        <input type="text" class="input-des" placeholder="" name="description" [(ngModel)]="description">
+                                        <textarea type="textarea" class="input-des" placeholder="" name="description" [(ngModel)]="description"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -99,20 +99,34 @@
                     </button>
                 </div>
             </fieldset>
-            <fieldset class="change-task" *ngIf = "task && details">
-                <div class="view-task">
-                    <div class="info-task">
-                        <header>
-                            <div class="title-task">
-                                {{task.title}}
-                            </div>
-                            <div class="edit-task">
-    
-                            </div>
-                        </header>
+        </fieldset>
+        <fieldset class="change-task" *ngIf = "(task && details)">
+            <div class="view-task" style="height: 70px;">
+                <div class="info-task">
+                    <header class="task-editor">
+                        <div class="title-task" style="display: inline;">
+                            <h2 style="color: #fff; font-family: proxima-nova, sans-serif; position: relative; left: 30px; top: 10px; font-weight: 300;">{{task.title}}</h2>
+                            <h3 style="color: #fff; font-family: proxima-nova, sans-serif; position: relative; left: 30px; bottom: 4px; font-weight: 300;">{{task.subject}}</h3>
+                        </div>
+                        <div class="edit-task" style="display: inline; position: relative; left: 420px; bottom: 70px;">
+                            <button style="font-family: proxima-nova, sans-serif; font-size: 17px; position: relative; height: 30px; width: 65px; border-radius: 4px; border-width: 0.1px; background-color: rgb(0, 212, 42); color: #fff; border-color:rgb(0, 212, 42) ;">
+                                Edit
+                            </button>
+                            <button style="font-family: proxima-nova, sans-serif; font-size: 17px; position: relative; left: 10px; height: 30px; width: 65px; border-radius: 4px; border-width: 0.1px; background-color: rgba(255, 0, 0, 0.918); color: #fff; border-color: rgba(255, 0, 0, 0.918);">
+                                Delete                                
+                            </button>
+                            <button (click) = close() style="font-family: proxima-nova, sans-serif; font-size: 17px; position: relative; left: 20px; height: 30px; width: 65px; border-radius: 4px; border-width: 0.1px; background-color: #ffffff; color: #010101; border-color: #fff;">
+                                Close
+                            </button>
+                        </div>
+                    </header>
+                    <div style="position: relative; width: 664px; height: min-content; background-color: #fff;">
+                        <fieldset style="position: relative; text-indent: 50px;">
+                            <p style="position: sticky; max-width: 634px; text-indent: initial;">{{task.description}}<br></p>
+                        </fieldset>
                     </div>
                 </div>
-            </fieldset>
+            </div>
         </fieldset>
     </div>
 </body>

@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { MatFormFieldModule } from '@angular/material/form-field';
 // import { MatInputModule } from '@angular/material/input';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -38,6 +39,7 @@ import { CalendarComponent } from './calendar/calendar.component';
   ],
   imports: [
     BrowserModule,
+    FullCalendarModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([

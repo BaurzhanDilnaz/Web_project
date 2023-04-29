@@ -170,7 +170,6 @@
 } */
 
 
-/* Customize the label (the checkbox-btn) */
 .checkbox-btn {
     display: block;
     position: relative;
@@ -183,7 +182,6 @@
     user-select: none;
 }
 
-/* Hide the browser's default checkbox */
 .checkbox-btn input {
     position: absolute;
     opacity: 0;
@@ -197,7 +195,6 @@
     font-size: 14px;
 }
 
-/* Create a custom checkbox */
 .checkmark {
     position: absolute;
     top: 5px;
@@ -213,7 +210,6 @@
     background-color: transparent;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
@@ -230,7 +226,6 @@
     transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
 }
 
-/* Show the checkmark when checked */
 .checkbox-btn input:checked~.checkmark:after {
     visibility: visible;
     opacity: 1;
@@ -329,4 +324,22 @@
 .input-des{
     width: 625px;
     height: 150px;
+}
+
+
+.change-task{
+    position: relative;
+    background-color: rgba(207, 207, 207, 0.522);
+    left: 50%;
+    bottom: 618.5px;
+    max-width: 680px;
+    min-height: 600px;
+}
+.task-editor{
+    position: relative;
+    background-color: #2196F3;
+    max-height: 72px;
+    border-width: 0.1px;
+    max-width: 660px;
+    left: 2px;
 }

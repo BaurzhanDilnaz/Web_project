@@ -19,10 +19,9 @@ export class SignInComponent {
   }
 
   login() {
+    // console.log(this.email, this.password)
     this.service.login(this.email, this.password).subscribe((token) => {
       localStorage.setItem('token', token.token);
-      this.email = "";
-      this.password = "";
       this.router.navigate(['/profile'])
     })
     this.email = "";

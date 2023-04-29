@@ -57,7 +57,7 @@ p {
     right: 150px
 }
 
-.nav-option a:hover{
+.nav-option a:hover {
     text-decoration: underline;
 }
 
@@ -69,10 +69,10 @@ p {
 
 .SS {
     font-family: 'Libre Baskerville', serif;
-  font-weight: bold;
-  font-size: 35px;
-  position: relative;
-  left: 100px;
+    font-weight: bold;
+    font-size: 35px;
+    position: relative;
+    left: 100px;
 }
 
 .nav-option-after {
@@ -96,10 +96,11 @@ p {
     text-decoration: none;
     color: white;
 }
-#logo{
+
+#logo {
     position: relative;
     left: 90px;
-  }
+}
 
 .paragraph1 {
     position: relative;
@@ -111,18 +112,19 @@ p {
     /* background:linear-gradient(to right, #2a3665, #1a67a3, #02eeee); */
 }
 
-h2{
+h2 {
     position: absolute;
     top: 100px;
     color: white;
-    font-family:  italic, serif;
+    font-family: italic, serif;
     left: 50px;
     right: 50px;
     background: linear-gradient(to right, #2a3665, #1a67a3, #02eeee);
     text-align: center;
-    
+
 }
-#c{
+
+#c {
     position: absolute;
     top: 250px;
     left: 50px;
@@ -131,8 +133,9 @@ h2{
     background-color: #90d4ec;
     padding: 10px 10px 80px 10px;
 }
-#c1{
-    color:#2a3665;
+
+#c1 {
+    color: #2a3665;
     position: absolute;
     top: 530px;
     left: 120px;
@@ -142,98 +145,110 @@ h2{
     font-family: sans-serif;
 
 }
-#c1:hover{
+
+#c1:hover {
     text-decoration: underline;
 }
-#python{
+
+#python {
     position: absolute;
     top: 250px;
-    left: 360px;
+    left: 400px;
     display: inline-block;
     border-radius: 10px;
     background-color: #90d4ec;
     padding: 10px 10px 110px 10px;
 }
-#python1{
-    color:#2a3665;
+
+#python1 {
+    color: #2a3665;
     position: absolute;
     top: 530px;
-    left: 410px;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: sans-serif;
-}
-#python1:hover{
-    text-decoration: underline;
-}
-#java{
-    position: absolute;
-    top: 250px;
-    left: 670px;
-    display: inline-block;
-    border-radius: 10px;
-    background-color: #90d4ec;
-    padding: 10px 10px 80px 10px;
-   
-}
-#java1{
-    color:#2a3665;
-    position: absolute;
-    top: 530px;
-    left: 730px;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: sans-serif;
-}
-#java1:hover{
-    text-decoration: underline;
-}
-#javascript{
-    position:absolute;
-    top: 250px;
-    left: 980px;
-    display: inline-block;
-    border-radius: 10px;
-    background-color: #90d4ec;
-    padding: 10px 10px 110px 10px;
-}
-#javascript1{
-    color:#2a3665;
-    position: absolute;
-    top: 530px;
-    left: 1010px;
+    left: 450px;
     font-size: 22px;
     font-weight: bold;
     text-decoration: none;
     font-family: sans-serif;
 }
 
-#javascript1:hover{
+#python1:hover {
     text-decoration: underline;
 }
-.meta{
-    font-family: "Mulish",sans-serif;
-    font-size: 14px;
-    color:rgb(129, 126, 126);
+
+#java {
     position: absolute;
-    left: 500px;
+    top: 250px;
+    left: 730px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #90d4ec;
+    padding: 10px 10px 80px 10px;
+
+}
+
+#java1 {
+    color: #2a3665;
+    position: absolute;
+    top: 530px;
+    left: 790px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+#java1:hover {
+    text-decoration: underline;
+}
+
+#javascript {
+    position: absolute;
+    top: 250px;
+    left: 1060px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #90d4ec;
+    padding: 10px 10px 110px 10px;
+}
+
+#javascript1 {
+    color: #2a3665;
+    position: absolute;
+    top: 530px;
+    left: 1095px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+#javascript1:hover {
+    text-decoration: underline;
+}
+
+.meta {
+    font-family: "Mulish", sans-serif;
+    font-size: 14px;
+    color: rgb(129, 126, 126);
+    position: absolute;
+    left: 600px;
     top: 830px
-  }
-  #line1 {
+}
+
+#line1 {
     position: absolute;
     /* font-size: 30px; */
-    width: 1345px;
+    width: 105.4%;
     left: -84px;
     opacity: 0.3;
     top: 780px
-  }
-  #line2 {
+}
+
+#line2 {
     position: absolute;
     /* font-size: 30px; */
     width: 1345px;
     left: -84px;
     opacity: 0.3;
     top: 880px;
-  }
+}

@@ -17,7 +17,7 @@ export class TasksComponent implements OnInit{
   task : Task
 
   constructor(){
-    this.addtask = true
+    this.addtask = false
     this.tasks = tasks
     this.subject_name = ""
     this.date = ""
@@ -27,8 +27,8 @@ export class TasksComponent implements OnInit{
     this.task = {} as Task
   }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+    return this.task
   }
 
 
@@ -42,7 +42,10 @@ export class TasksComponent implements OnInit{
   }
 
   createTask(){
-
+    this.title = ""
+    this.description = ""
+    this.subject_name = ""
+    this.date = ""
   }
 
   forupdate(title : string){
@@ -50,6 +53,11 @@ export class TasksComponent implements OnInit{
     this.addtask = false
     this.task = this.tasks.find(task => task.title === title)!
     console.log(title, this.details, this.task)
+    // this.task.isActive = true
+    // this.task.active += 1
   }
 
+  close(){
+    this.details = false
+  }
 }
