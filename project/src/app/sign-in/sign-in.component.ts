@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../student.service';
 import { Router } from "@angular/router";
+import { User } from '../user';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,6 +11,7 @@ import { Router } from "@angular/router";
 export class SignInComponent {
   email: string;
   password: string;
+  users : User[] = []
   constructor(
     private router: Router,
     private service: StudentService
@@ -19,11 +21,21 @@ export class SignInComponent {
   }
 
   login() {
-    // console.log(this.email, this.password)
-    this.service.login(this.email, this.password).subscribe((token) => {
-      localStorage.setItem('token', token.token);
-      this.router.navigate(['/profile'])
+    // this.service.login(this.email, this.password).subscribe((token) => {
+    //   localStorage.setItem('token', token.token);
+    //   this.router.navigate(['/profile'])
+    // })
+    this.service.getUser().subscribe((users) =>{
+      this.users = users
     })
+    for (var user of this.users) {
+      if (user.email === this.email){
+        if(user.password === this.password){
+          console.log("Welcome" , user.first_name)
+          this.router.navigate(['/profile'])
+        }
+      }
+    }
     this.email = "";
     this.password = "";
   }

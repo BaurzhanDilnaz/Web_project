@@ -11,7 +11,9 @@
     border-width: 0;
     color: aliceblue;
     font-size: 17px;
+    cursor: pointer;
 }
+
 
 .button-to-add {
     position: relative;
@@ -26,6 +28,14 @@
     border-width: 0;
     color: aliceblue;
     font-size: 16px;
+    cursor: pointer;
+    transition: all;
+}
+
+.button-to-add :hover{
+    width: 82px;
+    height: 38px;
+    background-color: #1c649f;
 }
 
 .tasks {

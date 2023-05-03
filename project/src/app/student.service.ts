@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Student } from './student';
+import { User } from './user';
 import { AuthToken } from './models';
 
 @Injectable({
@@ -12,17 +12,23 @@ export class StudentService {
 
   constructor(private client: HttpClient) { }
 
-  createUser( first_name : string, last_name : string, email:string, password : string, secret_word : string): Observable<Student>{
-    return this.client.post<Student>(
-      `${this.BASE_URL}/student`,
-      {user_name : first_name, last_name : last_name, email:email, password : password, secret_word : secret_word}
+  getUser(): Observable<User[]>{
+    return this.client.get<User[]>(
+      `${this.BASE_URL}/student`
     )
   }
 
-  login(username : string, password : string): Observable<AuthToken>{
+  createUser(first_name: string, last_name: string, email: string, password: string): Observable<User> {
+    return this.client.post<User>(
+      `${this.BASE_URL}/student`,
+      {first_name : first_name , last_name: last_name, email: email, password: password,  secret_word : "qwerty"}
+    )
+  }
+
+  login(username: string, password: string): Observable<AuthToken> {
     return this.client.post<AuthToken>(
       `${this.BASE_URL}/login`,
-      {username, password}
+      { username, password }
     )
   }
 

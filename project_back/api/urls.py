@@ -4,7 +4,7 @@ from api import views
 
 
 urlpatterns = [
-    path('student', views.register),
-    path('login', views.login)
-    # path('student/<int:student_id>', views.student_detail)
+    # path('student', views.register),
+    path('login', views.login),
+    path('student', views.student_list)
 ]

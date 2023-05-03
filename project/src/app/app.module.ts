@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-// import { MatDatepickerModule } from '@angular/material/datepicker';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatInputModule } from '@angular/material/input';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +16,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { TodoComponent } from './todo/todo.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { MyAccauntComponent } from './my-accaunt/my-accaunt.component';
 
 
 @NgModule({
@@ -33,9 +31,6 @@ import { CalendarComponent } from './calendar/calendar.component';
     TodoComponent,
     TasksComponent,
     CalendarComponent,
-    // MatDatepickerModule,
-    // MatFormFieldModule,
-    // MatInputModule
   ],
   imports: [
     BrowserModule,
@@ -51,7 +46,8 @@ import { CalendarComponent } from './calendar/calendar.component';
       {path: 'profile', component: ProfileComponent},
       {path: 'to-do', component: TodoComponent},
       {path: 'tasks', component: TasksComponent},
-      {path: 'calendar', component: CalendarComponent}
+      {path: 'calendar', component: CalendarComponent},
+      {path: 'my-accaunt', component: MyAccauntComponent}
     ]),
     FormsModule
   ],

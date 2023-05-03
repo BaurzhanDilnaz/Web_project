@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
 import { StudentService } from '../student.service';
-import { Student } from '../student';
+import { User } from '../user';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,15 +15,13 @@ export class SignUpComponent implements OnInit {
   last_name: string;
   email: string;
   password: string;
-  secret_word: string;
-  student: Student
+  student: User
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private service: StudentService
   ) {
-    this.student = {} as Student
-    this.secret_word = "";
+    this.student = {} as User
     this.first_name = "";
     this.email = "";
     this.last_name = "";
@@ -34,8 +32,7 @@ export class SignUpComponent implements OnInit {
   }
 
   createUser() {
-    this.service.createUser(this.first_name, this.last_name, this.email, this.password, this.secret_word).subscribe((user)=>{
-      this.secret_word = "";
+    this.service.createUser(this.first_name, this.last_name, this.email, this.password).subscribe((user)=>{
       this.first_name = "";
       this.email = "";
       this.last_name = "";

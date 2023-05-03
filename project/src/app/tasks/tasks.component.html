@@ -1,6 +1,6 @@
 <header>
     <div style="max-width: max-content; height: 70px; ">
-        <a class="backToHome" [routerLink]="['/']" >
+        <a class="backToHome" [routerLink]="['/profile']" >
             <button class="button-back">
                 Home
             </button>
@@ -91,10 +91,10 @@
                     </div>
                 </fieldset>
                 <div class="task-save">
-                    <button (click) = 'createTask()' style="position: relative; left: 558.6px; top: 10px; height: 40px; width: 100px; background-color: #2196F3; border-radius: 2px; border-width: 0px; color: #fff; font-family: proxima-nova, sans-serif; font-size: 17px;">
+                    <button (click) = 'createTask()' style="cursor: pointer;  position: relative; left: 558.6px; top: 10px; height: 40px; width: 100px; background-color: #2196F3; border-radius: 2px; border-width: 0px; color: #fff; font-family: proxima-nova, sans-serif; font-size: 17px;">
                         Save
                     </button>
-                    <button (click) = 'cancel()' style="position: relative; right: 97.6px; height: 40px; width: 100px; top: 10px; background-color: #fff; border-radius: 2px; border-width: 1px; border-color: #bbbbbb; font-family: proxima-nova, sans-serif; font-size: 17px;">
+                    <button (click) = 'cancel()' style="position: relative; cursor: pointer; right: 97.6px; height: 40px; width: 100px; top: 10px; background-color: #fff; border-radius: 2px; border-width: 1px; border-color: #bbbbbb; font-family: proxima-nova, sans-serif; font-size: 17px;">
                         Cancel
                     </button>
                 </div>
