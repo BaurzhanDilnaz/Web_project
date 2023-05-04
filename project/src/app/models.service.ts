@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthToken } from './models';
@@ -11,33 +11,40 @@ const USER_KEY = 'user';
 @Injectable({
   providedIn: 'root'
 })
-export class ModelsService {
+export class ModelsService implements OnInit{
   BASE_URL = 'http://localhost:8000'
-  s : []
-  // user_id : number
+  user_id : number
   constructor(
     private client: HttpClient,
     private service: StudentService
   ) { 
-    this.s = []
-    const userStr = localStorage.getItem(USER_KEY);
-    if(userStr){
-      this.s = JSON.parse(userStr)
-    }
-    // this.user_id = this.s[0]
+    this.service.changeNameMail()
+    this.user_id = this.service.id
+  }
+  ngOnInit(): void {
+    // this.service.changeNameMail()
+    this.user_id = this.service.id
   }
   
   getTasks(): Observable<Task[]> {
-    console.log(this.s)
+    console.log(this.service.id)
     return this.client.get<Task[]>(
       `${this.BASE_URL}/tasks`
     )
   }
 
-  createTask(title: string, description: string, subject_name: string, date: string): Observable<Task> {
+  createTask(title: string, description: string, subject: string, date: string): Observable<Task> {
+    // this.service.changeNameMail()
+    console.log(this.user_id)
     return this.client.post<Task>(
       `${this.BASE_URL}/tasks`,
-      { title, description, subject_name, date, user : this.s}
+      { title, description, subject, date, user_id : this.user_id}
+    )
+  }
+
+  deleteTask(task_id : number) : Observable<Task> {
+    return this.client.delete<Task> (
+      `${this.BASE_URL}/tasks/${task_id}`
     )
   }
 

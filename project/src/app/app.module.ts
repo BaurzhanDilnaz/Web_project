@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { TodoComponent } from './todo/todo.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { MyAccauntComponent } from './my-accaunt/my-accaunt.component';
+import { AccauntComponent } from './accaunt/accaunt.component';
 
 
 @NgModule({
@@ -31,12 +32,14 @@ import { MyAccauntComponent } from './my-accaunt/my-accaunt.component';
     TodoComponent,
     TasksComponent,
     CalendarComponent,
+    AccauntComponent,
   ],
   imports: [
     BrowserModule,
     FullCalendarModule,
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'about', component: AboutComponent},
@@ -47,7 +50,7 @@ import { MyAccauntComponent } from './my-accaunt/my-accaunt.component';
       {path: 'to-do', component: TodoComponent},
       {path: 'tasks', component: TasksComponent},
       {path: 'calendar', component: CalendarComponent},
-      {path: 'my-accaunt', component: MyAccauntComponent}
+      {path: 'accaunt', component: AccauntComponent}
     ]),
     FormsModule
   ],

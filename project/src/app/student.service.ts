@@ -18,6 +18,9 @@ export class StudentService implements OnInit{
   id:number
   usernameMain:string
   mailMain:string
+  first_name : string
+  last_name : string
+  password : string
 
   user: (string)[]
 
@@ -27,7 +30,10 @@ export class StudentService implements OnInit{
 
   constructor(private client: HttpClient) { 
     this.usernameMain = ""
+    this.first_name = ""
+    this.last_name = ""
     this.mailMain = ""
+    this.password = ""
     this.id = 0
     this.user = []
     const userStr = localStorage.getItem(USER_KEY);
@@ -36,7 +42,7 @@ export class StudentService implements OnInit{
     }
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.id = Number(this.user[0])
   }
 
   getUser(): Observable<User[]>{
@@ -67,9 +73,13 @@ export class StudentService implements OnInit{
               .join('')
           )
         );
+        console.log(decodedToken)
         const user_id = decodedToken.user_id;
         const email = decodedToken.email;
         const username = decodedToken.username;
+        // const first_name = decodedToken.first_name;
+        // const last_name = decodedToken.last_name;
+        // const password = decodedToken.password
 
         if(user_id != this.user[0]){
           this.user = []
@@ -81,21 +91,31 @@ export class StudentService implements OnInit{
           this.user.push(String(user_id))
           this.user.push(email)
           this.user.push(username)
+          // this.user.push(first_name)
+          // this.user.push(last_name)
+          // this.user.push(password)
         }
-
-        // this.user = []
-
-        
-
-
-
-        // console.log(user_id,username,email)
         localStorage.setItem(USER_KEY, JSON.stringify(this.user));
-        // this.changeNameMail()
+        this.changeNameMail()
 
         return { token, user_id, email, username };
       })
     );
   }
+  changeNameMail(){
+    console.log(this.user)
+    this.id = Number(this.user[0])
+    this.mailMain = this.user[1]
+    this.usernameMain = this.user[2]
+    // this.first_name = this.user[3]
+    // this.last_name = this.user[4]
+    // this.password = this.user[5]
+  }
 
+
+  getUserInfo(id : number):Observable<User>{
+    return this.client.get<User>(
+      `${this.BASE_URL}/users/${id}`
+    )
+  }
 }

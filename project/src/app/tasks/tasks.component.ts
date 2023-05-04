@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task} from '../models';
 import { ModelsService } from '../models.service';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-tasks',
@@ -16,9 +17,11 @@ export class TasksComponent implements OnInit{
   title : string
   details : boolean
   task : Task
+  edit : boolean
 
   constructor(
-    private service : ModelsService
+    private service : ModelsService,
+    private userservice : StudentService
   ){
     this.addtask = false
     this.subject_name = ""
@@ -27,18 +30,19 @@ export class TasksComponent implements OnInit{
     this.title = ""
     this.details = false
     this.task = {} as Task
+    this.userservice.changeNameMail()
+    this.edit = false
   }
 
   ngOnInit() {
     this.getTasks()
-    return this.tasks
+    this.userservice.changeNameMail()
   }
   
   
   getTasks(){
     this.service.getTasks().subscribe((tasks) => {
       this.tasks = tasks
-      console.log(this.tasks) 
     })
   }
 
@@ -52,6 +56,7 @@ export class TasksComponent implements OnInit{
   }
 
   createTask(){
+    this.userservice.changeNameMail()
     this.service.createTask(this.title, this.description, this.subject_name, this.date).subscribe((task) =>{
       this.title = ""
       this.description = ""
@@ -67,11 +72,22 @@ export class TasksComponent implements OnInit{
     console.log(this.tasks)
     this.task = this.tasks.find(task => task.title === title)!
     console.log(title, this.details, this.task)
-    // this.task.isActive = true
-    // this.task.active += 1
   }
 
   close(){
+    this.details = false
+  }
+
+  deleteTask(id : number){
+    this.service.deleteTask(id).subscribe((data) =>{
+      this.details = false
+      this.tasks = this.tasks.filter((task) => task.id != id)
+    })
+  }
+
+  edit_button(){
+    this.edit = true
+    this.addtask = false
     this.details = false
   }
 }

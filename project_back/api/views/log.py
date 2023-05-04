@@ -35,3 +35,11 @@ def register(request):
         return JsonResponse({'message': 'User created successfully.'})
     else:
         return JsonResponse({'message': 'Invalid request method.'})
+
+def get_User(request, user_id):
+    try:
+        task = User.objects.get(id=user_id)
+    except User.DoesNotExist as e:
+        return JsonResponse({'error': str(e)}, status=400)
+    if request.method == "GET":
+        return JsonResponse(User.to_json(), safe=False)

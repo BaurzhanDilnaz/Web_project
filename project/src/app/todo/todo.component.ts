@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToDoTask } from '../models';
 
 @Component({
   selector: 'app-todo',
@@ -6,48 +7,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent {
-//   interface ToDoItem {
-//   todo: string;
-//   checked: boolean;
-// }
+  newTasks: ToDoTask[];
+  currentTask: ToDoTask;
 
-// let addMessage = document.querySelector<HTMLInputElement>('.new_task'),
-//   addButton = document.querySelector<HTMLButtonElement>('.add'),
-//   todo = document.querySelector<HTMLUListElement>('.todo');
+  constructor() {
+    this.newTasks = [
+      new ToDoTask('task 1'),
+      new ToDoTask('task 2'),
+    ];
+    this.currentTask = new ToDoTask('');
+  }
 
-// let toDoList: ToDoItem[] = [];
+  ngOnInit(): void {
+  }
 
-// if (localStorage.getItem('todo')) {
-//   toDoList = JSON.parse(localStorage.getItem('todo')) as ToDoItem[];
-//   displayMessages();
-// }
+  addTask() {
+    if (this.currentTask.title !== '') {
+      // this.currentTask.id = this.newTasks.length + 1;
+      this.newTasks.push(this.currentTask);
+      this.currentTask = new ToDoTask('');
+    } else {
+      alert('Enter task title');
+    }
+  }
 
-// addButton.addEventListener('click', function () {
-//   let newToDo: ToDoItem = {
-//     todo: addMessage.value,
-//     checked: false,
-//   };
-//   toDoList.push(newToDo);
-//   displayMessages();
-// });
-
-// function displayMessages() {
-//   let displayMessage = '';
-//   toDoList.forEach(function (item: ToDoItem, i: number) {
-//     displayMessage += `
-//               <li>
-//                   <input type='checkbox' id='item_${i}' ${item.checked ? 'checked' : ''}>
-//                   <label for='item_${i}'>${item.todo}</label>
-//               </li>
-//           `;
-//   });
-//   todo.innerHTML = displayMessage;
-//   localStorage.setItem('todo', JSON.stringify(toDoList));
-// };
-
-// function remove(todo: ToDoItem) {
-//   const toDoList = JSON.parse(localStorage.getItem('todo')) as ToDoItem[];
-//   localStorage.setItem('todo', JSON.stringify(toDoList.filter((item) => item.todo !== todo.todo)));
-//   displayMessages();
-// }
+  onNewTaskRemove(index: number) {
+    this.newTasks = this.newTasks.filter((x) => x.id !== index);
+  }
 }
