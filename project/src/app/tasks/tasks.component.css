@@ -14,6 +14,16 @@
     cursor: pointer;
 }
 
+body{
+    position: absolute;
+    left: -9px;
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1613228618_79-p-fon-sinii-bumaga-118.jpg);
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    height: fit-content;
+    width: 100%;
+}
 
 .button-to-add {
     position: relative;
@@ -40,6 +50,7 @@
 
 .tasks {
     position: relative;
+    height: fit-content;
     top: 40px;
 }
 
@@ -50,6 +61,8 @@
     height: 70px;
     max-height: 71px;
     position: relative;
+    width: 680px;
+    margin: 10px;
 }
 
 .listOfelements {
@@ -178,90 +191,46 @@
     transition: all 0.2s linear;
     transition-delay: 0.15s;
 } */
-
-
-.checkbox-btn {
-    display: block;
-    position: relative;
-    /* padding-left: 30px;
-    margin-bottom: 10px; */
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.checkbox-btn input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkbox-btn label {
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.checkmark {
-    position: absolute;
-    top: 5px;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    /* border-width: 4px; */
-    border: 2.5px solid #11171296;
-    transition: .2s linear;
-}
-
-.checkbox-btn input:checked~.checkmark {
-    background-color: transparent;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    left: 50%;
-    top: 40%;
-    width: 10px;
-    height: 14px;
-    border: 2px solid #0ea021;
-    filter: drop-shadow(0px 0px 10px #0ea021);
-    border-width: 0 2.5px 2.5px 0;
-    transition: .2s linear;
-    transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
-}
-
-.checkbox-btn input:checked~.checkmark:after {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-    animation: pulse 1s ease-in;
-}
-
-.checkbox-btn input:checked~.checkmark {
-    transform: rotate(45deg);
+/* 
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3d405b;
     border: none;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: translate(-50%, -50%) rotate(0deg) scale(1);
-    }
-
-    50% {
-        transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
-    }
-}
-
-
-
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+   
+   button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   button:hover span {
+    padding-right: 15px;
+   }
+   
+   button:hover span:after {
+    opacity: 1;
+    right: 0;
+   } */
 
 .task-text {
     position: relative;
@@ -292,8 +261,9 @@
 .addTask {
     position: relative;
     background-color: rgba(207, 207, 207, 0.522);
-    left: 50%;
-    bottom: 618.5px;
+    left: 51.5%;
+    /* left: 40px; */
+    bottom: 658.5px;
     max-width: 680px;
     min-height: 600px;
 }
@@ -340,8 +310,8 @@
 .change-task{
     position: relative;
     background-color: rgba(207, 207, 207, 0.522);
-    left: 50%;
-    bottom: 618.5px;
+    left: 51.5%;
+    bottom: 658.5px;
     max-width: 680px;
     min-height: 600px;
 }

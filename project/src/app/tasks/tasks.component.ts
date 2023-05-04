@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Task, tasks } from '../models';
+import { Task} from '../models';
+import { ModelsService } from '../models.service';
 
 @Component({
   selector: 'app-tasks',
@@ -16,9 +17,10 @@ export class TasksComponent implements OnInit{
   details : boolean
   task : Task
 
-  constructor(){
+  constructor(
+    private service : ModelsService
+  ){
     this.addtask = false
-    this.tasks = tasks
     this.subject_name = ""
     this.date = ""
     this.description = ""
@@ -28,9 +30,17 @@ export class TasksComponent implements OnInit{
   }
 
   ngOnInit() {
-    return this.task
+    this.getTasks()
+    return this.tasks
   }
-
+  
+  
+  getTasks(){
+    this.service.getTasks().subscribe((tasks) => {
+      this.tasks = tasks
+      console.log(this.tasks) 
+    })
+  }
 
   AddTask(){
     this.addtask = true
@@ -42,15 +52,19 @@ export class TasksComponent implements OnInit{
   }
 
   createTask(){
-    this.title = ""
-    this.description = ""
-    this.subject_name = ""
-    this.date = ""
+    this.service.createTask(this.title, this.description, this.subject_name, this.date).subscribe((task) =>{
+      this.title = ""
+      this.description = ""
+      this.subject_name = ""
+      this.date = ""
+    })
   }
 
   forupdate(title : string){
+    console.log(title)
     this.details = true
     this.addtask = false
+    console.log(this.tasks)
     this.task = this.tasks.find(task => task.title === title)!
     console.log(title, this.details, this.task)
     // this.task.isActive = true

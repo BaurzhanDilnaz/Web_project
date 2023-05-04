@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Student(models.Model):
     first_name = models.CharField(max_length=20)
@@ -25,17 +26,18 @@ class Task(models.Model):
     subject = models.CharField(max_length=30)
     date = models.CharField(max_length=30)
     description = models.CharField(max_length=10000)
-    user_id = models.ForeignKey(Student, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Task'
     
     def to_json(self):
         return{
+            'id':self.id,
             'title' : self.title,
             'subject' : self.subject,
             'date' : self.date,
             'description' : self.description,
-            'user_id' : self.user_id.email
+            'user_id' : self.user_id
         }
     
