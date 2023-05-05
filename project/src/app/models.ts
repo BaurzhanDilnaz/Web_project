@@ -1,24 +1,24 @@
-export interface AuthToken{
-    token : string
+export interface AuthToken {
+    token: string
 }
 
-export interface Task{
-    id : number,
-    title : string,
-    subject : string,
-    description : string,
-    isActive : boolean,
-    active : number
+export interface Task {
+    id: number,
+    title: string,
+    subject: string,
+    description: string,
+    date: string,
+    user_id: number
 }
 export class ToDoTask {
-    currentId: number = 1;
+    static currentId: number = 0;
     id: number;
     title: string;
     isDone: boolean;
-  
+
     constructor(title: string) {
-      this.id = this.currentId++;
-      this.title = title;
-      this.isDone = false;
+        this.id = ++ToDoTask.currentId;
+        this.title = title;
+        this.isDone = false;
     }
-  }
+}

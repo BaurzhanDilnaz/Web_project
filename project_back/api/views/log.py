@@ -1,4 +1,5 @@
 import json
+from urllib import response
 from django.shortcuts import render
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -36,10 +37,3 @@ def register(request):
     else:
         return JsonResponse({'message': 'Invalid request method.'})
 
-def get_User(request, user_id):
-    try:
-        task = User.objects.get(id=user_id)
-    except User.DoesNotExist as e:
-        return JsonResponse({'error': str(e)}, status=400)
-    if request.method == "GET":
-        return JsonResponse(User.to_json(), safe=False)

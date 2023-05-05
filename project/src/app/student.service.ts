@@ -113,9 +113,4 @@ export class StudentService implements OnInit{
   }
 
 
-  getUserInfo(id : number):Observable<User>{
-    return this.client.get<User>(
-      `${this.BASE_URL}/users/${id}`
-    )
-  }
 }

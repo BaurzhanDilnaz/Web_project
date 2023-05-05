@@ -1,3 +1,3 @@
 from .log import *
-from .vws import *
+from .vftdt import *
 from .vft import *

@@ -21,6 +21,8 @@ class Student(models.Model):
             'secret_word' : self.secret_word
         }
 
+
+
 class Task(models.Model):
     title = models.CharField(max_length=50)
     subject = models.CharField(max_length=30)
@@ -41,3 +43,17 @@ class Task(models.Model):
             'user_id' : self.user_id
         }
     
+
+class ToDoTask(models.Model):
+    title = models.CharField(max_length=255)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'ToDoTask'
+    
+    def to_json(self):
+        return{
+            'id' : self.id,
+            'title' : self.title,
+            'user_id' : self.user_id
+        }

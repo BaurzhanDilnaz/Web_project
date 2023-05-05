@@ -48,4 +48,11 @@ export class ModelsService implements OnInit{
     )
   }
 
+  updateTask(task_id : number, title : string, description : string) : Observable<Task> {
+    return this.client.put<Task> (
+      `${this.BASE_URL}/tasks/${task_id}`,
+      {title : title, description : description}
+    )
+  }
+
 }

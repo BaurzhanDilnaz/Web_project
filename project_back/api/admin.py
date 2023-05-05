@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from api.models import Student
-from api.models import Task
+from api.models import Task, ToDoTask
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
@@ -10,3 +10,7 @@ class StudentAdmin(admin.ModelAdmin):
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'date', 'subject', 'description')
+
+@admin.register(ToDoTask)
+class ToDoTaskAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title','user_id')

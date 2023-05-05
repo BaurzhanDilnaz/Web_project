@@ -16,17 +16,16 @@ export class AccauntComponent {
   ){
     this.user = {} as User
     this.service.changeNameMail()
-    this.user.id = this.service.id
   }
 
   
   ngOnInit(): void{
-    this.getUser(this.user.id)
+    this.getUser()
   }
 
-  getUser(id : number){
-    this.service.getUserInfo(id).subscribe((user) =>{
-      
-    })
+  getUser(){
+    this.service.changeNameMail()
+    this.user.email = this.service.mailMain
+    this.user.user_name = this.service.usernameMain
   }
 }
