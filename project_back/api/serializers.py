@@ -33,8 +33,8 @@ class TaskSerializer1(serializers.ModelSerializer):
 
 class TaskSerializer2(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
-    title = serializers.CharField()
-    description = serializers.CharField()
+    title = serializers.CharField(default = "")
+    description = serializers.CharField(default = "")
     date = serializers.CharField(default="")
     subject = serializers.CharField(default="")
     user_id = serializers.CharField(default="")

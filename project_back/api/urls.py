@@ -15,8 +15,8 @@ urlpatterns = [
 
     # ----------------------------------------------------------------
     # function based views
-    path('tasks', views.task_list1),
-    path('tasks/<int:task_id>', views.task_detail1),
+    # path('tasks', views.task_list1),
+    # path('tasks/<int:task_id>', views.task_detail1),
 
     # ----------------------------------------------------------------
     # views for todo task

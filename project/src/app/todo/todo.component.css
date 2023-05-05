@@ -1,3 +1,18 @@
+.button-back {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 80px;
+    height: 36px;
+    font-family: 'Libre Baskerville', serif;
+    background-color: #1c649b;
+    border-radius: 6px;
+    border-color: #1c649b;
+    border-width: 0;
+    color: aliceblue;
+    font-size: 17px;
+    cursor: pointer;
+}
 * {
     font-family: 'Segoe UI';
     margin: 0;
@@ -103,7 +118,7 @@ button.active {
     justify-content: flex-end;
     /* margin-right: 20px; */
     position: absolute;
-    left: 820px;
+    left: 450px;
     color: red;
     cursor: pointer;
 }

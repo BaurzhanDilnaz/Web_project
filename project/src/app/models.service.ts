@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthToken } from './models';
-import { Task } from './models';
+import { Task, ToDoTask } from './models';
 import { User } from './user';
 import { StudentService } from './student.service';
 
@@ -54,5 +54,25 @@ export class ModelsService implements OnInit{
       {title : title, description : description}
     )
   }
+
+  getToDoTasks() : Observable<ToDoTask[]>{
+    return this.client.get<ToDoTask[]>(
+      `${this.BASE_URL}/todo`
+    )
+  }
+
+  createToDo(title : string) : Observable<ToDoTask> {
+    return this.client.post<ToDoTask>(
+      `${this.BASE_URL}/todo`,
+      {title, user_id : this.user_id}
+    )
+  }
+
+  deleteToDo(todo_id : number) : Observable<ToDoTask> {
+    return this.client.delete<ToDoTask> (
+      `${this.BASE_URL}/todo/${todo_id}`
+    )
+  }
+
 
 }

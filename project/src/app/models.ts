@@ -1,3 +1,4 @@
+
 export interface AuthToken {
     token: string
 }
@@ -14,11 +15,11 @@ export class ToDoTask {
     static currentId: number = 0;
     id: number;
     title: string;
-    isDone: boolean;
+    user_id : string
 
-    constructor(title: string) {
+    constructor(title: string, user_id : string) {
         this.id = ++ToDoTask.currentId;
         this.title = title;
-        this.isDone = false;
+        this.user_id = user_id
     }
 }

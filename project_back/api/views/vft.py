@@ -120,7 +120,7 @@ class TaskDetailAPIView(APIView):
 
     def put(self, request, task_id):
         instance = self.get_object(task_id)
-        serializer = TaskSerializer1(instance=instance, data=request.data)
+        serializer = TaskSerializer2(instance=instance, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

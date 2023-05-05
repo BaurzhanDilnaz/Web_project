@@ -83,6 +83,7 @@ export class TasksComponent implements OnInit{
     console.log(this.tasks)
     this.task = this.tasks.find(task => task.title === title)!
     console.log(title, this.details, this.task)
+    this.ngOnInit()
   }
 
   close(){
@@ -104,12 +105,18 @@ export class TasksComponent implements OnInit{
   }
 
   editTask(id : number){
-    this.service.updateTask(id, this.title, this.description).subscribe((data)=>{
-      this.title = ""
-      this.description = ""
-      this.edit = false
-      this.details = true
-      this.ngOnInit()
-    })
+    if (this.title && this.description){
+      this.service.updateTask(id, this.title, this.description).subscribe((data)=>{
+        this.title = ""
+        this.description = ""
+        this.edit = false
+        this.details = true
+        this.ngOnInit()
+      })
+    }else if(this.title === ""){
+      alert('Enter the title of task');
+    }else{
+      alert('Enter the description of task');
+    }
   }
 }
